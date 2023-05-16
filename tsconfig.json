@@ -3,7 +3,7 @@
     /* Language and Environment */
     "target": "es2015",
     "pretty": true, /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    
+
     /* Modules */
     "module": "commonjs", /* Specify what module code is generated. */
     "lib": [
@@ -23,11 +23,22 @@
     "esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
     "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
     "experimentalDecorators": true,
-   
+
     /* Type Checking */
     "strict": true, /* Enable all strict type-checking options. */
     "noImplicitAny": true, /* Enable error reporting for expressions and declarations with an implied 'any' type. */
     "noUnusedLocals": false, /* Enable error reporting when local variables aren't read. */
     "noUnusedParameters": false, /* Raise an error when a function parameter isn't read. */
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true },
+    ],
+    "paths": {
+      "@global/*": ["src/shared/globals/*"],
+      "@service/*": ["src/shared/services/*"],
+      "@socket/*": ["src/shared/sockets/*"],
+      "@worker/*": ["src/shared/workers/*"],
+      "@root/*": ["src/*"], // this should be last!!!
+    }
   }
 }

@@ -9,12 +9,15 @@
     "lint:check": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
     "prettier:check": "prettier --check 'src/**/*.{ts, json}'",
-    "prettier:fix": "prettier --write 'src/**/*.{ts, json}'"
+    "prettier:fix": "prettier --write 'src/**/*.{ts, json}'",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "author": "Ofir Parnass",
   "license": "ISC",
   "dependencies": {
+    "@bull-board/express": "^5.1.2",
     "@socket.io/redis-adapter": "^8.2.0",
+    "bullmq": "^3.13.4",
     "bunyan": "^1.8.15",
     "compression": "^1.7.4",
     "cookie-session": "^2.0.0",
@@ -28,7 +31,8 @@
     "mongoose": "^7.1.0",
     "redis": "^4.6.6",
     "socket.io": "^4.6.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "typescript-transform-paths": "^3.4.6"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.8",
@@ -43,6 +47,7 @@
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.6",
     "tsconfig-paths": "^4.2.0"
   }
 }

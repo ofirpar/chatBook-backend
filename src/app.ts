@@ -1,7 +1,7 @@
 import express, { Express } from 'express';
-import  { ChatBookServer} from './setupServer';
-import databaseConnection from './setupDatabase';
-import {config} from './config';
+import  { ChatBookServer} from '@root/setupServer';
+import databaseConnection from '@root/setupDatabase';
+import {config} from '@root/config';
 
 class Application {
     public init(): void {
