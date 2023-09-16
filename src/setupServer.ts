@@ -112,7 +112,7 @@ export class ChatBookServer {
     });
   }
 
-  private socketIOConnections(): void {
+  private socketIOConnections(socketIO: Server): void {
     log.info('socketIOConnections');
   }
 }

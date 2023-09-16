@@ -24,7 +24,7 @@ withCredentials: true
 
 {
   "username": "Ofir",
-  "password": "myPass"
+  "password": "myPass1"
 }
 
 ###
@@ -39,3 +39,24 @@ GET {{baseUrl}}/{{urlPath}}/currentuser
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
+
+###
+POST {{baseUrl}}/{{urlPath}}/forgot-password
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "email": "ofir@test.com"
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/reset-password/ece08460d5548348bf44c64265cc476f2f991af8
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "password": "myPass1",
+  "confirmPassword": "myPass1"
+}
